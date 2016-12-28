@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans />
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      input="/WEB-INF/test/test.jsp"
+      parameter="flag"
+      path="/test"
+      type="com.xiaonei.mirage.web.action.TestAction"
+      cancellable="true">
+      <forward name="show" path="/WEB-INF/test/showCountry.jsp" />
+    </action>
+    <action
+      input="/WEB-INF/public/register.jsp"
+      parameter="flag"
+      path="/register"
+      type="com.xiaonei.mirage.web.action.RegisterAction"
+      validate="false"
+      cancellable="true" >
+      <forward name="registerOk" path="/WEB-INF/self/home.jsp" />
+    </action>
+
+    
+
+    
+
+
+    
+    
+
+
+
+  </action-mappings>
+ <!-- 配置请求处理器,就是把action的创建交给spring容器处理 -->
+  <controller>
+ <set-property property="processorClass" value="org.springframework.web.struts.DelegatingRequestProcessor"/>
+</controller> 
+  <message-resources parameter="com.xiaonei.mirage.struts.ApplicationResources" />
+</struts-config>
+

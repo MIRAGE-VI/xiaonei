@@ -1,0 +1,13 @@
+.foot{
+	width:1000px;
+	margin: 0 auto;
+	height:90px;
+}
+.navi2{
+	float: right;
+}
+.navi2 li{
+	float:left;
+	width:110px;
+	list-style-type:none;
+}
